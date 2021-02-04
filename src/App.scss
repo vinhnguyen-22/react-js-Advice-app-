@@ -1,0 +1,131 @@
+#root,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  height: 100vh;
+}
+
+.app {
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+    url("./img/lofi-wallpaper-21010623123654-scaled.jpg");
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  & .card {
+    width: 40%;
+    height: 80%;
+
+    margin-top: 20px;
+    padding: 2%;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    color: blanchedalmond;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: -20px;
+      bottom: -20px;
+      filter: blur(4px);
+    }
+
+    & .heading {
+      display: flex;
+      align-items: center;
+      height: 580px;
+      font-family: "Spartan", sans-serif;
+    }
+    & .next {
+      position: relative;
+      outline: none;
+      text-decoration: none;
+      border-radius: 50px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+      text-transform: uppercase;
+      height: 200px;
+      width: 210px;
+
+      opacity: 1;
+      background-color: #fff;
+      border: 1px solid rgba(22, 75, 167, 0.6);
+      &:hover {
+        animation: rotate 0.7s ease-in-out both;
+        & span {
+          animation: storm 0.7s ease-in-out both;
+          animation-delay: 0.06s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes storm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .card {
+    width: 80%;
+    height: 30%;
+  }
+}
+@media only screen and (min-widtsh: 425px) {
+  .card {
+    width: 100%;
+    height: 50%;
+  }
+}
